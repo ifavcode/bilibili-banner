@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const route = useRoute()
 
 const es = new WebSocket('ws://localhost:8080/test/' + route.params.id)
@@ -11,8 +11,8 @@ es.onerror = function (e) {
 es.onclose = function (e) {
   console.log('连接关闭', e);
 }
-es.onmessage = function (e) {
-  msgList.value.push(JSON.parse(e.data))
+es.onmessage = function (_e) {
+  // msgList.value.push(JSON.parse(e.data))
 }
 
 const inputValue = ref('')
@@ -31,7 +31,7 @@ const close = () => {
   es.close()
 }
 
-const msgList = ref([])
+const msgList = ref<any>([])
 
 </script>
 

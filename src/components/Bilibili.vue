@@ -92,7 +92,7 @@ const mouseEnter = (e: MouseEvent) => {
   enterX = e.x
 }
 
-const mouseLeave = (e: MouseEvent) => {
+const mouseLeave = (_e: MouseEvent) => {
   isEnter.value = false
   initPosition()
 }

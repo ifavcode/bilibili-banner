@@ -12,7 +12,7 @@ const handleChange = (e: any) => {
 }
 
 const handleUpload = async () => {
-  const res = request('/s3/upload/file', {
+  request('/s3/upload/file', {
     method: 'POST',
     headers: {
       "Content-Type": "multipart/form-data"
@@ -46,19 +46,19 @@ es.onmessage = (e: any) => {
   }
 }
 
-es.onopen = (e: any) => {
+es.onopen = (_e: any) => {
   console.log('connection');
 }
 
-es.onerror = (e: any) => {
+es.onerror = (_e: any) => {
   console.log('error');
 }
 
-const process = () => {
-  request('/s3/upload/process', {
-    method: 'POST'
-  })
-}
+// const process = () => {
+//   request('/s3/upload/process', {
+//     method: 'POST'
+//   })
+// }
 
 const ing = () => {
   request('/s3/upload/ing', {

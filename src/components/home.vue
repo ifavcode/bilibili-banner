@@ -1,6 +1,5 @@
 <script setup lang='ts'>
 import { AxiosProgressEvent } from 'axios';
-import { clear } from 'console';
 import { request } from '~/utils/request';
 
 
@@ -35,7 +34,7 @@ const createFileChunk = (size = 1024 * 1024 * 10) => {
   return fileChunkList
 }
 
-let key:NodeJS.Timeout | null = null
+let key: NodeJS.Timeout | null = null
 const handleUpload = async () => {
   if (!curFile.value) return
   fileChunkList = createFileChunk(Math.max(Math.floor(curFile.value!.size / 3 / 1024) * 1024, 1024 * 1024))
@@ -66,6 +65,7 @@ const handleUpload = async () => {
   key = setTimeout(() => {
     percentageList.value.map(v => {
       v = 100
+      return v
     })
   }, 500);
 }

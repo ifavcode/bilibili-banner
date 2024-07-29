@@ -17,6 +17,7 @@ const router: Router = createRouter({
     },
     {
       path: '/test/:id',
+      // @ts-ignore
       component: () => import('../components/test.vue')
     },
     {
@@ -26,7 +27,7 @@ const router: Router = createRouter({
   ],
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((_to, _from, next) => {
   next()
 })
 

@@ -11,7 +11,6 @@ declare module 'vue' {
     AInput: typeof import('ant-design-vue/es')['Input']
     AProgress: typeof import('ant-design-vue/es')['Progress']
     ASpace: typeof import('ant-design-vue/es')['Space']
-    AUpload: typeof import('ant-design-vue/es')['Upload']
     Bilibili: typeof import('./../src/components/Bilibili.vue')['default']
     Home: typeof import('./../src/components/home.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
